@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+
+.text-primary {
+  color: #66ADD3;
+}
+
+.text-secondary {
+  color: #CBD5E1;
+}
