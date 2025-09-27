@@ -2,6 +2,8 @@
 
 import { useState } from "react"
 import { FaRocket, FaChevronDown } from "react-icons/fa"
+import { GoRocket } from "react-icons/go"
+import { IoIosLock, IoMdCheckmark } from "react-icons/io"
 
 const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
     const [formState, setFormState] = useState({
@@ -71,11 +73,11 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
 
     return (
         <section className="py-16 px-4 bg-slate-900">
-            <div className="max-w-md mx-auto">
+            <div className="max-w-2xl mx-auto">
                 {/* Icon */}
                 <div className="flex justify-center mb-6">
-                    <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
-                        <FaRocket className="text-white text-xl" />
+                    <div className="w-12 h-12 bg-[#1E293B] rounded-full flex items-center justify-center">
+                        <GoRocket className="text-[#66ADD3] text-2xl" />
                     </div>
                 </div>
 
@@ -97,7 +99,7 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
                                 value={formState.firstName}
                                 onChange={handleInputChange}
                                 placeholder="John"
-                                className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                                className="w-full px-4 py-3 bg-slate-800 border border-[#CBD5E1] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
                                 required
                             />
                         </div>
@@ -109,7 +111,7 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
                                 value={formState.lastName}
                                 onChange={handleInputChange}
                                 placeholder="Smith"
-                                className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                                className="w-full px-4 py-3 bg-slate-800 border border-[#CBD5E1] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
                                 required
                             />
                         </div>
@@ -124,7 +126,7 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
                             value={formState.phoneNumber}
                             onChange={handleInputChange}
                             placeholder="+1 880 1570767890"
-                            className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                            className="w-full px-4 py-3 bg-slate-800 border border-[#CBD5E1] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
                             required
                         />
                     </div>
@@ -138,7 +140,7 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
                             value={formState.businessEmail}
                             onChange={handleInputChange}
                             placeholder="you@company.com"
-                            className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                            className="w-full px-4 py-3 bg-slate-800 border border-[#CBD5E1] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
                             required
                         />
                     </div>
@@ -152,7 +154,7 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
                             value={formState.companyName}
                             onChange={handleInputChange}
                             placeholder="Your Company Ltd"
-                            className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
+                            className="w-full px-4 py-3 bg-slate-800 border border-[#CBD5E1] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
                             required
                         />
                     </div>
@@ -165,7 +167,7 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
                                 name="role"
                                 value={formState.role}
                                 onChange={handleInputChange}
-                                className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors cursor-pointer"
+                                className="w-full px-4 py-3 bg-slate-800 border border-[#CBD5E1] rounded-lg text-white appearance-none focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors cursor-pointer"
                                 required
                             >
                                 {roleOptions.map((option, index) => (
@@ -190,7 +192,7 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
                             name="agreeToUpdates"
                             checked={formState.agreeToUpdates}
                             onChange={handleInputChange}
-                            className="mt-1 w-4 h-4 bg-slate-800 border border-slate-700 rounded focus:ring-blue-500 focus:ring-2"
+                            className="mt-1 w-4 h-4 bg-slate-800 border border-[#CBD5E1] rounded focus:ring-blue-500 focus:ring-2"
                             required
                         />
                         <label className="text-gray-300 text-sm leading-relaxed">I agree to receive launch updates</label>
@@ -208,13 +210,13 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
 
                 {/* Disclaimer */}
                 <div className="text-center mt-6">
-                    <div className="flex items-center justify-center mb-2">
-                        <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                    <div className="flex items-center justify-center mb-2 gap-2">
+                        <IoIosLock className="text-green-500" />
                         <p className="text-gray-400 text-xs">{data.disclaimer}</p>
                     </div>
                     <div className="flex justify-center space-x-4 text-xs text-gray-500">
                         {data.policies.map((policy, index) => (
-                            <span key={index}>• {policy}</span>
+                            <span className="flex gap-1 items-center text-[#38A169]" key={index}><IoMdCheckmark /> {policy}</span>
                         ))}
                     </div>
                 </div>

@@ -43,7 +43,8 @@ const HowItWorksSection = () => {
 
   return (
     <section className="bg-slate-900 py-16 px-4">
-      <div className="max-w-7xl mx-auto">
+
+      <div className=" mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{sectionData.title}</h2>
@@ -57,16 +58,17 @@ const HowItWorksSection = () => {
             return (
               <div
                 key={step.id}
-                className="relative bg-slate-800 border border-slate-700 rounded-lg p-6 hover:border-slate-600 transition-colors duration-300"
+                className="relative bg-slate-800 border border-slate-700 rounded-lg p-6 hover:border-slate-600 transition-colors duration-300 text-center"
               >
-              
+
 
                 {/* Step Number and Icon */}
-                <div className="flex items-center mb-4">
-                  <span className="text-gray-400 text-sm font-medium mr-4">{step.step}</span>
-                  <div className="bg-blue-500 p-2 rounded-lg">
-                    <IconComponent className="w-5 h-5 text-white" />
+                <div className="flex items-center justify-between mb-4 ">
+                  <span className="text-white bg-[#323e4d] p-2 px-3 rounded-full text-sm font-medium mr-4">{step.step}</span>
+                  <div className="bg-[#CBD5E1] p-2 rounded-lg cursor-pointer">
+                    <IconComponent className="w-5 h-5 text-[#66ADD3] " />
                   </div>
+                  
                 </div>
 
                 {/* Step Title */}
@@ -78,7 +80,7 @@ const HowItWorksSection = () => {
                 {/* Features List */}
                 <ul className="space-y-2">
                   {step.features.map((feature, index) => (
-                    <li key={index} className="flex items-center text-gray-400 text-sm">
+                    <li key={index} className="flex items-center text-gray-400 text-sm  md:pl-14 lg:pl-20 xl:pl-28 2xl:pl-38">
                       <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div>
                       {feature}
                     </li>

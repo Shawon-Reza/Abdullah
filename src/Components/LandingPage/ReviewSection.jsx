@@ -16,7 +16,7 @@ const ReviewSection = ({ isAdmin = false }) => {
         author: {
           name: "Sarah Chen",
           title: "VP of Operations, Pacific Trade Solutions",
-          avatar: "/professional-woman-diverse.png",
+          avatar: "https://i.pinimg.com/736x/89/cd/33/89cd332a43ee81f8b593807986a4345d.jpg",
         },
       },
       {
@@ -26,7 +26,7 @@ const ReviewSection = ({ isAdmin = false }) => {
         author: {
           name: "Marcus Rodriguez",
           title: "Trade Finance Director, Global Commerce Ltd",
-          avatar: "/professional-man.jpg",
+          avatar: "https://i.pinimg.com/736x/89/cd/33/89cd332a43ee81f8b593807986a4345d.jpg",
         },
       },
       {
@@ -36,9 +36,10 @@ const ReviewSection = ({ isAdmin = false }) => {
         author: {
           name: "Emily Watson",
           title: "Senior Trader, Atlantic Commodities",
-          avatar: "/professional-woman-trader.jpg",
+          avatar: "https://i.pinimg.com/736x/89/cd/33/89cd332a43ee81f8b593807986a4345d.jpg",
         },
       },
+     
     ],
   })
 
@@ -72,7 +73,7 @@ const ReviewSection = ({ isAdmin = false }) => {
 
   return (
     <div className="bg-slate-900 py-16 px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className=" mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{reviewsData.title}</h2>

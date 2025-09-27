@@ -26,12 +26,12 @@ const FreeAccessSection = () => {
   
 
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="">
       {/* Main Offer Section */}
       <div className="flex items-center justify-center px-4 py-8">
-        <div className="max-w-2xl w-full text-center">
+        <div className="max-w-4xl w-full text-center">
           {/* Limited Launch Offer Badge */}
-          <div className="inline-flex items-center gap-2 bg-slate-800/50 border border-slate-700 rounded-full px-4 py-2 mb-8">
+          <div className="inline-flex items-center gap-2 bg-slate-800/50 border border-slate-700 rounded-full px-4 py-2 mb-8 cursor-pointer">
             <offerData.badge.icon className="w-4 h-4 text-slate-300" />
             <span className="text-slate-300 text-sm font-medium">{offerData.badge.text}</span>
           </div>
@@ -51,9 +51,9 @@ const FreeAccessSection = () => {
           {/* Stats Row */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-8">
             {/* Spots Taken */}
-            <div className="flex items-center gap-2 bg-slate-800/30 border border-slate-700 rounded-lg px-4 py-2">
-              <FiUsers className="w-4 h-4 text-slate-400" />
-              <span className="text-slate-300 text-sm">
+            <div className="flex items-center gap-2 bg-slate-800/30 border border-slate-700 rounded-lg px-4 py-2 text-white/90">
+              <FiUsers className="w-4 h-4 " />
+              <span className=" text-sm">
                 {offerData.stats.spotsUsed} of {offerData.stats.totalSpots} spots taken
               </span>
             </div>

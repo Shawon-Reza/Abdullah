@@ -10,6 +10,13 @@ const TrustSection = ({ trustData }) => {
       { name: "Logoipsum", id: 3, icon: "star" },
       { name: "Logoipsum", id: 4, icon: "zap" },
       { name: "Logoipsum", id: 5, icon: "shield" },
+      { name: "Logoipsum", id: 6, icon: "circle" },
+      { name: "Logoipsum", id: 7, icon: "x" },
+      { name: "Logoipsum", id: 8, icon: "star" },
+      { name: "Logoipsum", id: 9, icon: "zap" },
+      { name: "Logoipsum", id: 10, icon: "zap" },
+      { name: "Logoipsum", id: 11, icon: "zap" },
+
     ],
   }
 
@@ -35,8 +42,8 @@ const TrustSection = ({ trustData }) => {
   }
 
   return (
-    <div className="border-t border-slate-800 py-12 px-4">
-      <div className="max-w-4xl mx-auto text-center">
+    <div className=" py-20 ">
+      <div className=" mx-auto text-center">
         {/* Trust Title */}
         <p className="text-slate-300 text-sm font-medium mb-8">{data.title}</p>
 
