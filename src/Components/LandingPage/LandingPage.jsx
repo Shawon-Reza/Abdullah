@@ -13,39 +13,41 @@ import FooterComponent from './FooterComponent'
 
 const LandingPage = () => {
     return (
-        <div className='bg-[#0F172A] text-white xl:px-10'>
+        <div className='bg-[#0F172A] text-white '>
 
-            <section>
-                <NavBar></NavBar>
-            </section>
-            <section>
-                <HeroSection />
-            </section>
-            <section>
-                <FeaturesSection></FeaturesSection>
-            </section>
-            <section>
-                <ServicesSection></ServicesSection>
-            </section>
-            <section>
-                <HowItWorksSection></HowItWorksSection>
-            </section>
-            <section>
-                <FreeAccessSection></FreeAccessSection>
-            </section>
-            <section>
-                <TrustSection></TrustSection>
-            </section>
+            <div className='xl:px-10'>
+                <section>
+                    <NavBar></NavBar>
+                </section>
+                <section>
+                    <HeroSection />
+                </section>
+                <section>
+                    <FeaturesSection></FeaturesSection>
+                </section>
+                <section>
+                    <ServicesSection></ServicesSection>
+                </section>
+                <section>
+                    <HowItWorksSection></HowItWorksSection>
+                </section>
+                <section>
+                    <FreeAccessSection></FreeAccessSection>
+                </section>
+                <section>
+                    <TrustSection></TrustSection>
+                </section>
 
-            <section>
-                <ReviewSection></ReviewSection>
-            </section>
-            <section>
-                <GlobalTradeComponent></GlobalTradeComponent>
-            </section>
-            <section>
-                <ReservationForm></ReservationForm>
-            </section>
+                <section>
+                    <ReviewSection></ReviewSection>
+                </section>
+                <section>
+                    <GlobalTradeComponent></GlobalTradeComponent>
+                </section>
+                <section>
+                    <ReservationForm></ReservationForm>
+                </section>
+            </div>
             <section>
                 <FooterComponent></FooterComponent>
             </section>

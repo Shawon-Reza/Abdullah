@@ -14,7 +14,7 @@ const NavBar = () => {
       { id: 2, label: "How it works", href: "/how-it-works" },
       { id: 3, label: "Modules", href: "/modules" },
       { id: 4, label: "Pricing", href: "/pricing" },
-      { id: 5, label: "About Us", href: "/about" },
+      { id: 5, label: "About Us", href: "/about_us" },
       { id: 6, label: "FAQ", href: "/faq" },
     ],
     ctaButton: { text: "Start Free", href: "/start-free" },

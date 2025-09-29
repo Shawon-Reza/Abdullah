@@ -3,15 +3,15 @@ import { FaTint, FaTwitter, FaFacebookF, FaInstagram, FaLinkedinIn } from 'react
 
 const FooterComponent = () => {
     return (
-        <footer className="bg-blue-950 text-white py-6 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
-                <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-0 mb-6">
+        <footer className="bg-[#002137] border border-[#0000001A] text-white py-6 px-4 sm:px-6 lg:px-8">
+            <div className=" mx-auto">
+                <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-0 mb-6 ">
                     <div className="flex flex-col items-start">
                         <div className="flex items-center mb-3">
                             <FaTint className="text-blue-400 text-2xl sm:text-3xl mr-2" />
                             <h2 className="text-xl sm:text-2xl font-bold">FuelDeal.ai</h2>
                         </div>
-                        <div className="bg-blue-800 p-3 rounded-md text-sm sm:text-base mb-4 max-w-xs">
+                        <div className=" p-3 rounded-md text-sm sm:text-base mb-4 max-w-xs text-[#E2E8F0]">
                             AI-powered Trade Intelligence for Global Commerce. Transforming International Trade Operations with Automation and Insights.
                         </div>
                         <div className="flex space-x-4 text-xl">
@@ -21,10 +21,10 @@ const FooterComponent = () => {
                             <FaLinkedinIn />
                         </div>
                     </div>
-                    <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 md:gap-16 w-full md:w-auto">
+                    <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 md:gap-16 w-full md:w-auto ">
                         <div>
                             <h3 className="font-bold text-base sm:text-lg mb-2">Product</h3>
-                            <ul className="space-y-1 text-sm sm:text-base">
+                            <ul className="space-y-1 text-sm sm:text-base text-[#E2E8F0]">
                                 <li>AI Chatbot</li>
                                 <li>Document Generator</li>
                                 <li>Vessel & Freight Calculator</li>
@@ -33,7 +33,7 @@ const FooterComponent = () => {
                         </div>
                         <div>
                             <h3 className="font-bold text-base sm:text-lg mb-2">Company</h3>
-                            <ul className="space-y-1 text-sm sm:text-base">
+                            <ul className="space-y-1 text-sm sm:text-base text-[#E2E8F0]">
                                 <li>How It Works</li>
                                 <li>Modules</li>
                                 <li>Pricing</li>
@@ -42,7 +42,7 @@ const FooterComponent = () => {
                         </div>
                         <div>
                             <h3 className="font-bold text-base sm:text-lg mb-2">Support</h3>
-                            <ul className="space-y-1 text-sm sm:text-base">
+                            <ul className="space-y-1 text-sm sm:text-base text-[#E2E8F0]">
                                 <li>Help Center</li>
                                 <li>API Docs</li>
                                 <li>Privacy Policy</li>
