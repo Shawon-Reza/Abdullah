@@ -36,7 +36,7 @@ const ServicesSection = () => {
         title: "Due Diligence Reports",
         description:
           "Company data in a PDF with sanctions/PEP hits, registry records, ownership red flags, sanctions/ban forensics.",
-        icon: TbReportSearch ,
+        icon: TbReportSearch,
         buttonText: "See a sample",
       },
     ],
@@ -61,10 +61,12 @@ const ServicesSection = () => {
           {servicesData.services.map((service) => {
             const IconComponent = service.icon
             return (
+
               <div
                 key={service.id}
-                className="bg-slate-800 border border-slate-700 rounded-lg p-6 hover:border-slate-600 transition-colors duration-300"
+                className="bg-slate-800 rounded-lg p-6  border-3 border-slate-700 hover:border-[#66ADD3] hover:shadow-lg transition-all duration-700 ease-in-out hover:scale-101"
               >
+
                 {/* Icon */}
                 <div className="mb-4">
                   <IconComponent className="w-8 h-8 text-[#66ADD3]" />

@@ -76,8 +76,8 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
             <div className="max-w-2xl mx-auto">
                 {/* Icon */}
                 <div className="flex justify-center mb-6">
-                    <div className="w-12 h-12 bg-[#1E293B] rounded-full flex items-center justify-center">
-                        <GoRocket className="text-[#66ADD3] text-2xl" />
+                    <div className="w-15 h-15 bg-[#1E293B] rounded-full flex items-center justify-center">
+                        <GoRocket className="text-[#66ADD3]" size={32} />
                     </div>
                 </div>
 

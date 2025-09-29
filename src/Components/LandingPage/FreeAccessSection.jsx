@@ -67,7 +67,7 @@ const FreeAccessSection = () => {
 
           {/* CTA Button */}
           <div className="mb-6">
-            <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform">
+            <button className="cursor-pointer bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-transform duration-600 ease-in-out shadow-lg hover:shadow-xl transform hover:scale-105 ">
               {offerData.cta.text}
             </button>
           </div>

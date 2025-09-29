@@ -76,7 +76,9 @@ const Pricing = () => {
                     </p>
                     <div className="flex flex-col md:flex-row justify-center gap-4 sm:gap-6 max-w-6xl mx-auto hover:border-[#66ADD3]">
                         {plans.map((plan, index) => (
-                            <div key={index} className="bg-[#1E293B] rounded-xl p-4 sm:p-6 flex flex-col w-full md:w-1/3 border border-transparent hover:border-[#66ADD3] hover:shadow-lg transition-all duration-900 hover:scale-101">
+
+                            <div key={index} className="bg-[#1E293B] rounded-xl p-4 sm:p-6 flex flex-col w-full md:w-1/3 border-3 border-transparent hover:border-[#66ADD3] hover:shadow-lg transition-all duration-900 hover:scale-101">
+
 
                                 <h2 className="text-xl sm:text-2xl font-bold mb-2">{plan.name}</h2>
                                 <p className="text-sm sm:text-base text-gray-300 mb-4">{plan.description}</p>

@@ -1,15 +1,18 @@
 import React from 'react';
 import { FaTint, FaTwitter, FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import websitelogo from '../../assets/websitelogo.png'
+
 
 const FooterComponent = () => {
     return (
-        <footer className="bg-[#002137] border border-[#0000001A] text-white py-6 px-4 sm:px-6 lg:px-8">
+        <footer className="bg-[#002137] border border-[#0000001A] text-white py-6 px-10 sm:px-24 ">
             <div className=" mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-0 mb-6 ">
                     <div className="flex flex-col items-start">
-                        <div className="flex items-center mb-3">
-                            <FaTint className="text-blue-400 text-2xl sm:text-3xl mr-2" />
-                            <h2 className="text-xl sm:text-2xl font-bold">FuelDeal.ai</h2>
+                        <div className="flex items-center mb-3 gap-2">
+                           
+                            <img src={websitelogo} alt="" />
+                            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold">FuelDeal.ai</h2>
                         </div>
                         <div className=" p-3 rounded-md text-sm sm:text-base mb-4 max-w-xs text-[#E2E8F0]">
                             AI-powered Trade Intelligence for Global Commerce. Transforming International Trade Operations with Automation and Insights.
@@ -21,9 +24,9 @@ const FooterComponent = () => {
                             <FaLinkedinIn />
                         </div>
                     </div>
-                    <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 md:gap-16 w-full md:w-auto ">
+                    <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 md:gap-16 w-full md:w-auto justify-between lg:w-[65%] ">
                         <div>
-                            <h3 className="font-bold text-base sm:text-lg mb-2">Product</h3>
+                            <h3 className="font-bold text-base sm:text-lg  md:text-xl mb-2">Product</h3>
                             <ul className="space-y-1 text-sm sm:text-base text-[#E2E8F0]">
                                 <li>AI Chatbot</li>
                                 <li>Document Generator</li>
@@ -32,7 +35,7 @@ const FooterComponent = () => {
                             </ul>
                         </div>
                         <div>
-                            <h3 className="font-bold text-base sm:text-lg mb-2">Company</h3>
+                            <h3 className="font-bold text-base sm:text-lg mb-2 md:text-xl">Company</h3>
                             <ul className="space-y-1 text-sm sm:text-base text-[#E2E8F0]">
                                 <li>How It Works</li>
                                 <li>Modules</li>
@@ -41,7 +44,7 @@ const FooterComponent = () => {
                             </ul>
                         </div>
                         <div>
-                            <h3 className="font-bold text-base sm:text-lg mb-2">Support</h3>
+                            <h3 className="font-bold text-base sm:text-lg mb-2 md:text-xl">Support</h3>
                             <ul className="space-y-1 text-sm sm:text-base text-[#E2E8F0]">
                                 <li>Help Center</li>
                                 <li>API Docs</li>

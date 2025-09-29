@@ -39,6 +39,8 @@ const TrustSection = ({ trustData }) => {
   const firstLine = data.companies.slice(0, midIndex);
   const secondLine = data.companies.slice(midIndex);
 
+  
+
   return (
     <div className="py-20 bg-[#0F172A]">
       <div className="mx-auto text-center mb-8">

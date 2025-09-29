@@ -3,6 +3,7 @@
 import React, { useState } from "react"
 import { HiMenu, HiX } from "react-icons/hi"
 import { NavLink } from "react-router-dom"
+import websitelogo from '../../assets/websitelogo.png'
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -17,7 +18,7 @@ const NavBar = () => {
       { id: 5, label: "About Us", href: "/about_us" },
       { id: 6, label: "FAQ", href: "/faq" },
     ],
-    ctaButton: { text: "Start Free", href: "/start-free" },
+    ctaButton: { text: "Register", href: "/Register" },
   }
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
@@ -26,25 +27,33 @@ const NavBar = () => {
   const inactiveClass = "text-gray-300"
 
   return (
-    <header className=" text-white">
+    <header className=" text-white ">
       <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-              <span className="text-slate-900 font-bold text-lg">{navigationData.logo.icon}</span>
+          <div className="flex items-center space-x-2 gap-3">
+            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+
+              <img
+                src={websitelogo}
+                alt="Website Logo"
+                className=" scale-140 h-full w-full rounded-full border-2 border-transparent hover:border-[#66ADD3] transition-colors duration-300 transform hover:scale-[1.1]"
+              />
+
+
+
             </div>
-            <span className="font-bold text-3xl">{navigationData.logo.text}</span>
+            <span className="font-bold text-3xl xl:text-4xl">{navigationData.logo.text}</span>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8 text-base">
+          <nav className="hidden md:flex items-center space-x-8 text-base ">
             {navigationData.menuItems.map(item => (
               <NavLink
                 key={item.id}
                 to={item.href}
                 className={({ isActive }) =>
-                  `text-sm font-medium transition-colors duration-200 hover:text-blue-300 ${isActive ? activeClass : inactiveClass}`
+                  `text-md  font-medium transition-colors duration-200 hover:text-blue-300 ${isActive ? activeClass : inactiveClass}`
                 }
               >
                 {item.label}
@@ -56,7 +65,7 @@ const NavBar = () => {
           <div className="hidden md:block">
             <NavLink
               to={navigationData.ctaButton.href}
-              className="bg-[#66ADD3] hover:bg-[#309dd8] hover text-black px-6 py-2 rounded-lg text-sm font-semibold transition-colors duration-200"
+              className="bg-[#66ADD3] hover:bg-[#309dd8] hover text-black px-6 py-3 rounded-lg text-sm font-semibold transition-colors duration-200"
             >
               {navigationData.ctaButton.text}
             </NavLink>
@@ -64,7 +73,7 @@ const NavBar = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button onClick={toggleMenu} className="text-gray-300 hover:text-white focus:outline-none transition-colors duration-200">
+            <button onClick={toggleMenu} className="text-gray-300 hover:text-white focus:outline-none  cursor-pointer hover:scale-105 transform transition-transform duration-700 ease-in-out">
               {isMenuOpen ? <HiX className="h-6 w-6" /> : <HiMenu className="h-6 w-6" />}
             </button>
           </div>

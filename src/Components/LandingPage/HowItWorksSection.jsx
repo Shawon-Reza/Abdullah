@@ -69,7 +69,7 @@ const HowItWorksSection = () => {
                 className="absolute -inset-1 rounded-lg pointer-events-none "
                 style={{
                   background: 'conic-gradient(from var(--angle), transparent 25%, #06b6d4, transparent 50%)',
-                  animation: 'shimmer-spin 5.5s linear infinite'
+                  animation: 'shimmer-spin 7.5s linear infinite'
                 }}
               ></div>
 

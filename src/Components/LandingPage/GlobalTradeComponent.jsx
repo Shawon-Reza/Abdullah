@@ -39,7 +39,7 @@ const GlobalTradeComponent = () => {
 
         {tradeCards.map((card) => (
           <div key={card.id} className="bg-[#0F172A] border border-[#FED1B5]/80 rounded-xl p-4 sm:p-6 flex flex-col items-center text-center w-full md:w-1/3">
-            <div className="bg-[#1E293B] rounded-full p-2 sm:p-3 mb-3 sm:mb-7 xl:mb-10">
+            <div className="bg-[#1E293B] rounded-xl p-2 sm:p-3 mb-3 sm:mb-7 xl:mb-10">
               {card.icon}
 
             </div>

@@ -44,7 +44,7 @@ const FeaturesSection = () => {
                 className="border border-[#FED1B5] bg-[#0F172A]  rounded-lg p-6 text-center space-y-8  text-secondary"
               >
                 <div className="flex justify-center mb-4">
-                  <IconComponent className="text-orange-500 text-3xl" />
+                  <IconComponent size={52} className="text-orange-500  bg-[#1E293B] p-3 rounded-xl" />
                 </div>
                 <div className="text-white">
                   <p className="text-base leading-relaxed">
