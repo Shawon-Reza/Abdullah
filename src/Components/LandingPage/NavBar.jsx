@@ -23,7 +23,7 @@ const NavBar = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
-  const activeClass = "text-white bg-slate-800"
+  const activeClass = "text-[#66ADD3]  underline underline-offset-4 "
   const inactiveClass = "text-gray-300"
 
   return (
@@ -53,7 +53,7 @@ const NavBar = () => {
                 key={item.id}
                 to={item.href}
                 className={({ isActive }) =>
-                  `text-md  font-medium transition-colors duration-200 hover:text-blue-300 ${isActive ? activeClass : inactiveClass}`
+                  `text-md  font-medium hover:text-blue-300 hover:font-bold transform transition-transform duration-900 ease-in-out  ${isActive ? activeClass : inactiveClass}`
                 }
               >
                 {item.label}

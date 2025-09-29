@@ -63,11 +63,11 @@ const HeroSection = () => {
 
                     {/* Right Column */}
                     <div className="flex justify-center items-center">
-                        <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-blue-900 to-slate-900 border-6 border-[#66ADD3] w-full min-h-[400px] lg:min-h-0">
+                        <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-blue-900 to-slate-900   w-full   lg:min-h-0">
                             <video
                                 src={heroData.video.src}
                                 controls
-                                className="w-full h-full object-cover rounded-lg"
+                                className="min-h-[200px] max-h-[400px] w-full h-full object-cover rounded-2xl bg-gradient-to-br from-blue-900 to-slate-900 border-6 border-[#66ADD3]  lg:min-h-[450px] xl:min-h-[480px]"
                                 poster=""
                             />
                         </div>

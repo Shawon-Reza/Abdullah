@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import NavBar from './NavBar';
 import HeroSection from './HeroSection';
 import FeaturesSection from './FeaturesSection';
@@ -10,60 +11,41 @@ import TrustSection from './TrustSection';
 import ReservationForm from './ReservationForm';
 import GlobalTradeComponent from './GlobalTradeComponent';
 import FooterComponent from './FooterComponent';
-import DotGrid from '../../Styles/background/DotGrid';
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+};
 
 const LandingPage = () => {
+  const sections = [
+    <NavBar key="navbar" />,
+    <HeroSection key="hero" />,
+    <FeaturesSection key="features" />,
+    <ServicesSection key="services" />,
+    <HowItWorksSection key="how" />,
+    <FreeAccessSection key="freeaccess" />,
+    <TrustSection key="trust" />,
+    <ReviewSection key="review" />,
+    <GlobalTradeComponent key="global" />,
+    <ReservationForm key="reservation" />,
+    <FooterComponent key="footer" />,
+  ];
+
   return (
     <div className="relative bg-[#0F172A] text-white overflow-hidden">
-      {/* Background Dot Grid */}
-
-      {/* Page Content */}
-      <div className="relative z-10 px-5 md:px-10 xl:px-15">
-        <section className='py-5'>
-          <NavBar />
-        </section>
-
-        <section>
-          <HeroSection />
-        </section>
-
-        <section>
-          <FeaturesSection />
-        </section>
-
-        <section>
-          <ServicesSection />
-        </section>
-
-        <section>
-          <HowItWorksSection />
-        </section>
-
-        <section>
-          <FreeAccessSection />
-        </section>
-
-        <section>
-          <TrustSection />
-        </section>
-
-        <section>
-          <ReviewSection />
-        </section>
-
-        <section>
-          <GlobalTradeComponent />
-        </section>
-
-        <section>
-          <ReservationForm />
-        </section>
-      </div>
-
-      {/* Footer */}
-      <section className="relative z-10">
-        <FooterComponent />
-      </section>
+      {sections.map((Component, index) => (
+        <motion.div
+          key={index}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.1 }}
+          variants={fadeInUp}
+          className="w-full"
+        >
+          {Component}
+        </motion.div>
+      ))}
     </div>
   );
 };
