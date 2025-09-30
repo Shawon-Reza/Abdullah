@@ -23,7 +23,7 @@ const LandingPage = () => {
     <HeroSection key="hero" />,
     <FeaturesSection key="features" />,
     <ServicesSection key="services" />,
-    <HowItWorksSection key="how" />,
+    <HowItWorksSection id="how-it-works" key="how" />,
     <FreeAccessSection key="freeaccess" />,
     <TrustSection key="trust" />,
     <ReviewSection key="review" />,

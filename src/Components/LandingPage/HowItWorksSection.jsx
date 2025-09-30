@@ -1,6 +1,9 @@
 import { FiUpload, FiSettings, FiDownload } from "react-icons/fi"
 
-const HowItWorksSection = () => {
+const HowItWorksSection = ({ id }) => {
+
+console.log(id)
+
   const sectionData = {
     title: "How It Works",
     subtitle:
@@ -51,7 +54,7 @@ const HowItWorksSection = () => {
   `
 
   return (
-    <section className="bg-slate-900 py-16 px-4">
+    <section id={id} className="bg-slate-900 py-16 px-4">
       <style>{customCss}</style>
 
       <div className="mx-auto text-center mb-12">

@@ -2,8 +2,10 @@ import { FaPlay, FaPause } from "react-icons/fa";
 import Simplification from '../../assets/Simplification.png';
 import DotGrid from "../../Styles/background/DotGrid";
 import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+    const navigate= useNavigate();
     const heroData = {
         cta: {
             text: "Claim 1 of 100 Free Pro Months",
@@ -31,7 +33,7 @@ const HeroSection = () => {
     };
 
     return (
-        <section className="relative py-12 lg:py-20 flex items-center overflow-hidden">
+        <section  className="relative py-12 lg:py-20 flex items-center overflow-hidden">
             {/* DotGrid background */}
             <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
                 <DotGrid
@@ -67,7 +69,11 @@ const HeroSection = () => {
                         </div>
 
                         <div className="mb-4">
-                            <button className="inline-block hover:bg-[#309cd6] text-black px-15 py-3 rounded-2xl text-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl bg-[#66ADD3] cursor-pointer">
+                            <button
+                            onClick={()=>{
+                                navigate('/register')
+                            }}
+                            className="inline-block hover:bg-[#309cd6] text-black px-15 py-3 rounded-2xl text-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl bg-[#66ADD3] cursor-pointer">
                                 {heroData.cta.text}
                             </button>
                         </div>
@@ -83,6 +89,8 @@ const HeroSection = () => {
                                 src={heroData.video.src}
                                 className=" min-h-[200px] max-h-[400px] w-full h-full object-cover rounded-2xl lg:min-h-[450px] xl:min-h-[480px]"
                                 poster=""
+                                autoPlay
+                                loop
                             />
 
                             {/* Center Play/Pause Button */}

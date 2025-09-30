@@ -31,7 +31,7 @@ const Gradient = ({
     return <div className={`relative group ${className}`}>
       {/* Animated glowing border */}
       <div
-        className="absolute -inset-2 rounded-xl blur-xl opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"
+        className="absolute -inset-2 rounded-xl blur-xl opacity-20 group-hover:opacity-0 transition duration-1000 group-hover:duration-200"
         style={{
           background: "#E6620F",
           animation: "move-glow 4s linear infinite",
