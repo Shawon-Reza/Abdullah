@@ -63,7 +63,7 @@ const Pricing = () => {
     }, []);
 
     return (
-        <div className="bg-[#0F172A]">
+        <div className="bg-[#0F172A] text-white">
             <section>
                 <NavBar />
             </section>

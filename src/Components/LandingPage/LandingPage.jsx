@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import NavBar from './NavBar';
 import HeroSection from './HeroSection';
@@ -11,6 +11,7 @@ import TrustSection from './TrustSection';
 import ReservationForm from './ReservationForm';
 import GlobalTradeComponent from './GlobalTradeComponent';
 import FooterComponent from './FooterComponent';
+import { useLocation } from 'react-router-dom';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -18,6 +19,23 @@ const fadeInUp = {
 };
 
 const LandingPage = () => {
+
+  const location = useLocation()
+
+  
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      setTimeout(() => {
+        const el = document.getElementById(location.state.scrollTo)
+        if (el) {
+          const offset = 100
+          const top = el.getBoundingClientRect().top + window.scrollY - offset
+          window.scrollTo({ top, behavior: "smooth" })
+        }
+      }, 100)
+    }
+  }, [location])
+
   const sections = [
     <NavBar key="navbar" />,
     <HeroSection key="hero" />,

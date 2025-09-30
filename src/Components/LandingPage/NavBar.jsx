@@ -1,19 +1,19 @@
-"use client"
-
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { HiMenu, HiX } from "react-icons/hi"
-import { NavLink } from "react-router-dom"
-import { Link as ScrollLink } from "react-scroll" // 👈 For smooth scroll
+import { NavLink, useNavigate, useLocation } from "react-router-dom"
 import websitelogo from '../../assets/websitelogo.png'
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [activeScroll, setActiveScroll] = useState("hero") // Track scroll sections
+  const navigate = useNavigate()
+  const location = useLocation()
 
   const navigationData = {
-    logo: { text: "FuelDeal.ai", icon: "⚡" },
+    logo: { text: "FuelDeal.ai" },
     menuItems: [
-      { id: 1, label: "Home", href: "/" },
-      { id: 2, label: "How it works", href: "how-it-works", isScroll: true }, // 👈 only this will scroll
+      { id: 1, label: "Home", href: "/", isScroll: true, scrollId: "hero" },
+      { id: 2, label: "How it works", href: "/", isScroll: true, scrollId: "how-it-works" },
       { id: 3, label: "Modules", href: "/modules" },
       { id: 4, label: "Pricing", href: "/pricing" },
       { id: 5, label: "About Us", href: "/about_us" },
@@ -24,15 +24,72 @@ const NavBar = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
-  const activeClass = "text-[#66ADD3] underline underline-offset-4"
-  const inactiveClass = "text-gray-300"
+  const scrollToSection = (id) => {
+    const offset = 100
+    const el = document.getElementById(id)
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.scrollY - offset
+      window.scrollTo({ top, behavior: "smooth" })
+      setActiveScroll(id)
+    }
+  }
+
+  const handleNavClick = (item) => {
+    setIsMenuOpen(false)
+
+    if (item.isScroll) {
+      // If Home clicked
+      if (item.scrollId === "hero") {
+        setActiveScroll("hero") // explicitly set Home active
+      }
+
+      if (location.pathname !== "/") {
+        navigate("/", { state: { scrollTo: item.scrollId } })
+      } else {
+        scrollToSection(item.scrollId)
+      }
+    } else {
+      setActiveScroll(null) // reset scroll active for normal pages
+      navigate(item.href)
+    }
+  }
+
+
+  // Track scroll and update active section
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navigationData.menuItems
+        .filter(i => i.isScroll)
+        .map(i => document.getElementById(i.scrollId))
+        .filter(Boolean)
+
+      const offset = 120
+      const scrollPos = window.scrollY + offset
+      let current = sections[0]?.id || "hero"
+
+      for (let section of sections) {
+        if (section.offsetTop <= scrollPos) {
+          current = section.id
+        }
+      }
+
+      setActiveScroll(current)
+    }
+
+    if (location.pathname === "/") {
+      window.addEventListener("scroll", handleScroll)
+      return () => window.removeEventListener("scroll", handleScroll)
+    } else {
+      setActiveScroll(null)
+    }
+  }, [location.pathname])
 
   return (
-    <header className="text-white">
+    <header className=" w-full bg-[#0F172A] z-50 ">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2 gap-3">
+          <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
               <img
                 src={websitelogo}
@@ -43,93 +100,63 @@ const NavBar = () => {
             <span className="font-bold text-3xl xl:text-4xl">{navigationData.logo.text}</span>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8 text-base">
-            {navigationData.menuItems.map(item => (
-              item.isScroll ? (
-                <ScrollLink
+          {/* Desktop Menu */}
+          <nav className="hidden md:flex items-center space-x-8">
+            {navigationData.menuItems.map(item => {
+              const isActive = item.isScroll
+                ? activeScroll === item.scrollId
+                : activeScroll === null && location.pathname === item.href
+
+              return (
+                <button
                   key={item.id}
-                  to={item.href}
-                  smooth={true}
-                  duration={500}
-                  className="cursor-pointer text-md font-medium hover:text-blue-300 hover:font-bold transition-transform duration-900 ease-in-out"
-                  activeClass={activeClass}
-                  spy={true}
+                  onClick={() => handleNavClick(item)}
+                  className={`cursor-pointer text-md font-medium hover:text-blue-300 hover:font-bold transition-transform duration-900 ease-in-out ${isActive ? "text-[#66ADD3] underline underline-offset-4" : "text-gray-300"
+                    }`}
                 >
                   {item.label}
-                </ScrollLink>
-              ) : (
-                <NavLink
-                  key={item.id}
-                  to={item.href}
-                  className={({ isActive }) =>
-                    `text-md font-medium hover:text-blue-300 hover:font-bold transform transition-transform duration-900 ease-in-out ${isActive ? activeClass : inactiveClass}`
-                  }
-                >
-                  {item.label}
-                </NavLink>
+                </button>
               )
-            ))}
+            })}
           </nav>
 
-          {/* Desktop CTA */}
+          {/* CTA */}
           <div className="hidden md:block">
             <NavLink
               to={navigationData.ctaButton.href}
-              className="bg-[#66ADD3] hover:bg-[#309dd8] text-black px-6 py-3 rounded-lg text-sm font-semibold transition-colors duration-200"
+              className="bg-[#66ADD3] hover:bg-[#309dd8] text-black px-6 py-3 rounded-lg text-sm font-semibold transition-colors duration-200 cursor-pointer"
             >
               {navigationData.ctaButton.text}
             </NavLink>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile Hamburger */}
           <div className="md:hidden">
-            <button onClick={toggleMenu} className="text-gray-300 hover:text-white focus:outline-none cursor-pointer hover:scale-105 transform transition-transform duration-700 ease-in-out">
+            <button onClick={toggleMenu} className="text-gray-300 hover:text-white cursor-pointer">
               {isMenuOpen ? <HiX className="h-6 w-6" /> : <HiMenu className="h-6 w-6" />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 border-t border-slate-700">
-              {navigationData.menuItems.map(item => (
-                item.isScroll ? (
-                  <ScrollLink
-                    key={item.id}
-                    to={item.href}
-                    smooth={true}
-                    duration={500}
-                    className="block px-3 py-2 text-sm font-medium transition-colors duration-200 hover:text-blue-300 hover:bg-slate-800 rounded-md cursor-pointer"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.label}
-                  </ScrollLink>
-                ) : (
-                  <NavLink
-                    key={item.id}
-                    to={item.href}
-                    onClick={() => setIsMenuOpen(false)}
-                    className={({ isActive }) =>
-                      `block px-3 py-2 text-sm font-medium transition-colors duration-200 hover:text-blue-300 hover:bg-slate-800 rounded-md ${isActive ? activeClass : inactiveClass}`
-                    }
-                  >
-                    {item.label}
-                  </NavLink>
-                )
-              ))}
+          <div className="md:hidden mt-2">
+            {navigationData.menuItems.map(item => {
+              const isActive = item.isScroll
+                ? activeScroll === item.scrollId
+                : activeScroll === null && location.pathname === item.href
 
-              <div className="pt-2">
-                <NavLink
-                  to={navigationData.ctaButton.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block w-full text-center bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors duration-200"
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => handleNavClick(item)}
+                  className={`block w-full text-left px-3 py-2 rounded-md ${isActive ? "text-[#66ADD3] underline underline-offset-4" : "text-gray-300"
+                    } hover:text-blue-300 hover:bg-slate-800 cursor-pointer`}
                 >
-                  {navigationData.ctaButton.text}
-                </NavLink>
-              </div>
-            </div>
+                  {item.label}
+                </button>
+              )
+            })}
           </div>
         )}
       </div>
