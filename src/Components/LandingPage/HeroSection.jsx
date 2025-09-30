@@ -1,6 +1,7 @@
-import { FaPlay } from "react-icons/fa"
-import Simplification from '../../assets/Simplification.png'
-import DotGrid from "../../Styles/background/DotGrid"
+import { FaPlay, FaPause } from "react-icons/fa";
+import Simplification from '../../assets/Simplification.png';
+import DotGrid from "../../Styles/background/DotGrid";
+import React, { useRef, useState } from "react";
 
 const HeroSection = () => {
     const heroData = {
@@ -10,14 +11,27 @@ const HeroSection = () => {
         },
         promoText: "First 100 users get 1 month of Pro free • Seats left: 100",
         video: {
-            src: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+            src: 'https://res.cloudinary.com/dhxd3lxyp/video/upload/v1759206060/5321843_Plant_Illuminated_3840x2160_n3zmut.mp4',
             alt: "FuelDeal.ai demo video",
         },
-    }
+    };
+
+    const videoRef = useRef(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+
+    const togglePlay = () => {
+        if (!videoRef.current) return;
+        if (videoRef.current.paused) {
+            videoRef.current.play();
+            setIsPlaying(true);
+        } else {
+            videoRef.current.pause();
+            setIsPlaying(false);
+        }
+    };
 
     return (
-        <section className="relative py-12 lg:py-20  flex items-center overflow-hidden">
-            
+        <section className="relative py-12 lg:py-20 flex items-center overflow-hidden">
             {/* DotGrid background */}
             <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
                 <DotGrid
@@ -36,7 +50,6 @@ const HeroSection = () => {
             {/* Content */}
             <div className="relative z-10 mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch h-full">
-                    
                     {/* Left Column */}
                     <div className="flex flex-col justify-center">
                         <h1 className="text-6xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
@@ -63,20 +76,29 @@ const HeroSection = () => {
 
                     {/* Right Column */}
                     <div className="flex justify-center items-center">
-                        <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-blue-900 to-slate-900   w-full   lg:min-h-0">
+                        <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-blue-900 to-slate-900 w-full lg:min-h-0 border-6 border-[#66ADD3]">
+                            {/* Custom Video */}
                             <video
+                                ref={videoRef}
                                 src={heroData.video.src}
-                                controls
-                                className="min-h-[200px] max-h-[400px] w-full h-full object-cover rounded-2xl bg-gradient-to-br from-blue-900 to-slate-900 border-6 border-[#66ADD3]  lg:min-h-[450px] xl:min-h-[480px]"
+                                className=" min-h-[200px] max-h-[400px] w-full h-full object-cover rounded-2xl lg:min-h-[450px] xl:min-h-[480px]"
                                 poster=""
                             />
+
+                            {/* Center Play/Pause Button */}
+                            <button
+                                onClick={togglePlay}
+                                className="absolute inset-0 flex items-center justify-center text-white text-5xl opacity-90 hover:opacity-100 transition-opacity"
+                            >
+                                {isPlaying ? <FaPause /> : <FaPlay />}
+                            </button>
                         </div>
                     </div>
 
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default HeroSection
+export default HeroSection;
