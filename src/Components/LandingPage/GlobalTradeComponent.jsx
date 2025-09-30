@@ -40,7 +40,7 @@ const GlobalTradeComponent = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
         {tradeCards.map((card) => (
           <Gradient key={card.id}>
-            <div className="bg-[#0F172A] border border-[#FED1B5]/80 rounded-xl p-4 sm:p-6 flex flex-col items-center text-center h-full md:min-h-[260px]  xl:min-h-0">
+            <div className="bg-[#0F172A] border border-[#FED1B5]/80 rounded-xl p-4 sm:p-6 flex flex-col items-center text-center h-full md:min-h-[260px]  xl:min-h-0 hover:scale-102 transform transition-transform duration-700 ease-in-out">
               <div className="bg-[#1E293B] rounded-xl p-3 mb-6 flex items-center justify-center">
                 {card.icon}
               </div>
