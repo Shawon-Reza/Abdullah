@@ -42,7 +42,7 @@ const FAQComponent = () => {
     };
 
     return (
-        <div className=" text-white py-8 px-4 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
+        <div className="mt-5 text-white py-8 px-4 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
             <h1 className="text-3xl sm:text-4xl font-bold text-center mb-4">Frequently Asked Questions</h1>
             <p className="text-center text-[#CBD5E1] sm:text-lg mb-8 sm:mb-12 max-w-xl sm:max-w-2xl mx-auto">
                 Everything you need to know about getting started with our platform

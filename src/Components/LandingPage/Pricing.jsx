@@ -68,7 +68,7 @@ const Pricing = () => {
                 <NavBar />
             </section>
 
-            <section>
+            <section className='mt-10'>
                 <div className="text-white py-8 px-4 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
                     <h1 className="text-3xl sm:text-4xl font-bold text-center mb-4">Simple, Transparent Pricing</h1>
                     <p className="text-center text-base sm:text-lg mb-8 sm:mb-12 max-w-xl sm:max-w-2xl mx-auto text-[#CBD5E1]">

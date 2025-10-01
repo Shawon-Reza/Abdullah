@@ -6,13 +6,13 @@ import FAQComponent from './FAQComponent'
 const FAQ = () => {
     return (
         <div className='bg-[#0F172A] text-white'>
-            <section>
+            <section className=''>
                 <NavBar></NavBar>
             </section>
 
 
 
-            <section>
+            <section className='mt-10'>
                 <FAQComponent></FAQComponent>
             </section>
 

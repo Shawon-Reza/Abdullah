@@ -12,7 +12,7 @@ const AboutUs = () => {
         <NavBar />
       </section>
 
-      <section>
+      <section className='mt-5'>
         <AboutUsSection></AboutUsSection>
       </section>
 
