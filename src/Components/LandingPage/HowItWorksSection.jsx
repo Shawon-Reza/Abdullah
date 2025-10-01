@@ -54,7 +54,7 @@ console.log(id)
   `
 
   return (
-    <section id={id} className="bg-slate-900 py-16 px-4">
+    <section id={id} className="bg-slate-900 py-16 px-5 lg:px-10 xl:15 2xl:px-20">
       <style>{customCss}</style>
 
       <div className="mx-auto text-center mb-12">

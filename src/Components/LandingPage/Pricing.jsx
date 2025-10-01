@@ -95,7 +95,7 @@ const Pricing = () => {
                                 <button className="cursor-pointer bg-[#66ADD3] hover:bg-[#3995c7] transition-colors duration-700 ease-in-out text-white font-semibold py-2 px-4 rounded-xl sm:py-2.5 sm:px-6">
                                     Upgrade Now ↑
                                 </button>
-                                <p className="text-center text-xs sm:text-sm text-gray-300 mt-2">30-days money-back guarantee</p>
+                                
                             </div>
                         ))}
                     </div>

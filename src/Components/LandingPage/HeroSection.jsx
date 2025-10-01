@@ -33,7 +33,7 @@ const HeroSection = () => {
     };
 
     return (
-        <section  className="relative py-12 lg:py-20 flex items-center overflow-hidden">
+        <section  className="relative py-12 lg:py-20 flex items-center overflow-hidden  px-5 lg:px-10 xl:15 2xl:px-20">
             {/* DotGrid background */}
             <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
                 <DotGrid

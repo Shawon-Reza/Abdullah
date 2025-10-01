@@ -1,4 +1,6 @@
 import React from "react";
+import abdullahAvater from "../../assets/abdullah.png"
+import olfiAvater from "../../assets/olfi.png"
 
 // Example data
 const teamMembers = [
@@ -7,14 +9,14 @@ const teamMembers = [
     name: "Abdullah Mahmood",
     role: "Founder, Commercial Manager",
     bio: "Oil & gas trading professional focused on refined products (EN590, Jet A-1, gasoil). Experience across commercial negotiations, KYC/DD, SPA/LOI/ICPO drafting, CIF/FOB pricing, and chartering/demurrage risk control. Built FuelDeal.ai to standardize what good desks already do—then make it instant and exportable.",
-    image: "https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?cs=srgb&dl=pexels-sulimansallehi-1704488.jpg&fm=jpg",
+    image: abdullahAvater,
   },
   {
     id: 2,
     name: "Olfi Mohammed",
     role: "Managing Director, ENGSL MINERALS DMCC",
     bio: "Over 30 years’ experience in oil & gas and carbon capture technology. Provides strategic guidance on trading best practices, risk management, and energy-transition capabilities that inform FuelDeal.ai’s product roadmap.",
-    image: "https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?cs=srgb&dl=pexels-sulimansallehi-1704488.jpg&fm=jpg",
+    image: olfiAvater,
   },
 ];
 
@@ -24,10 +26,7 @@ const AboutUsSection = () => {
       <div className="max-w-7xl mx-auto text-center mb-12">
         <h2 className="text-4xl font-bold mb-4">About Us</h2>
         <p className="text-secondary sm:text-lg max-w-2xl mx-auto leading-relaxed">
-          Lorem ipsum dolor sit amet consectetur. Volutpat gravida quisque
-          adipiscing sodales duis tristique. Velit quisque pellentesque eget
-          quisque. Posuere. Velit quisque pellentesque eget quisque. Posuere
-          dolor.
+          FuelDeal.ai is the AI co-pilot for oil & fuel trading—turning due diligence, trade documents, and CIF/FOB pricing into clean, send-ready exports in minutes.
         </p>
       </div>
 

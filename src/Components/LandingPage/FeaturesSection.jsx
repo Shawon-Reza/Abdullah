@@ -30,7 +30,7 @@ const FeaturesSection = () => {
   ]
 
   return (
-    <section className="py-16 px-4">
+    <section className="py-16 px-5 lg:px-10 xl:15 2xl:px-20">
       <div className=" mx-auto">
 
 

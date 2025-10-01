@@ -202,7 +202,7 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
                     <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full bg-[#66ADD3] hover:bg-[#3d9bce] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed mt-6"
+                        className="w-full bg-[#66ADD3] hover:bg-[#3d9bce] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed mt-6 cursor-pointer"
                     >
                         {isSubmitting ? "Reserving..." : data.buttonText}
                     </button>

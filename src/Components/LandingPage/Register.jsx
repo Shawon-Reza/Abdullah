@@ -2,6 +2,7 @@ import React from 'react'
 import NavBar from './NavBar'
 import FooterComponent from './FooterComponent'
 import PromoForm from './PromoForm'
+import ReservationForm from './ReservationForm'
 
 const Register = () => {
     return (
@@ -10,7 +11,7 @@ const Register = () => {
                 <NavBar></NavBar>
             </section>
             <section>
-                <PromoForm></PromoForm>
+                <ReservationForm></ReservationForm>
             </section>
             <section>
                 <FooterComponent></FooterComponent>
