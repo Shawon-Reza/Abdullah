@@ -54,7 +54,7 @@ console.log(id)
   `
 
   return (
-    <section id={id} className="bg-slate-900 py-16 px-5 lg:px-10 xl:15 2xl:px-20">
+    <section id={id} className="bg-slate-900 py-16 px-5 lg:px-15 xl:15 2xl:px-36">
       <style>{customCss}</style>
 
       <div className="mx-auto text-center mb-12">
@@ -82,7 +82,7 @@ console.log(id)
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-white bg-[#323e4d] p-2 px-3 rounded-full text-sm font-medium mr-4">{step.step}</span>
-                    <div className="bg-[#CBD5E1] p-2 rounded-lg cursor-pointer">
+                    <div className="bg-[#66ADD3]/30 p-2 rounded-lg cursor-pointer">
                       <IconComponent className="w-5 h-5 text-[#66ADD3]" />
                     </div>
                   </div>

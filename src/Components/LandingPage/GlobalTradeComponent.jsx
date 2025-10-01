@@ -28,7 +28,7 @@ const GlobalTradeComponent = () => {
   ];
 
   return (
-    <div className="text-white py-8 sm:py-12  lg:py-16 px-5 lg:px-10 xl:15 2xl:px-20">
+    <div className="text-white py-8 sm:py-12  lg:py-16 px-5 lg:px-15 xl:15 2xl:px-36">
       <h1 className="text-3xl sm:text-4xl font-bold text-center mb-4">
         Built for Global Trade Professionals
       </h1>

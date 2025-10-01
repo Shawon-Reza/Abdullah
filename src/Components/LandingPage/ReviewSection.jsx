@@ -72,7 +72,7 @@ const ReviewSection = ({ isAdmin = false }) => {
   }
 
   return (
-    <div className="bg-slate-900 py-16 px-5 lg:px-10 xl:15 2xl:px-20">
+    <div className="bg-slate-900 py-16 px-5 lg:px-15 xl:15 2xl:px-36">
       <div className=" mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">

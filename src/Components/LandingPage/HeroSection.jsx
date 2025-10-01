@@ -33,7 +33,7 @@ const HeroSection = () => {
     };
 
     return (
-        <section  className="relative py-12 lg:py-20 flex items-center overflow-hidden  px-5 lg:px-10 xl:15 2xl:px-20">
+        <section  className="relative py-12 lg:py-20 flex items-center overflow-hidden  px-5 lg:px-15 xl:15 2xl:px-36">
             {/* DotGrid background */}
             <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
                 <DotGrid
@@ -50,7 +50,7 @@ const HeroSection = () => {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="relative z-10 mx-auto  w-full">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch h-full">
                     {/* Left Column */}
                     <div className="flex flex-col justify-center">

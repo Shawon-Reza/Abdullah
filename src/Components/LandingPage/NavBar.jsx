@@ -85,16 +85,28 @@ const NavBar = () => {
   }, [location.pathname])
 
   return (
-    <header className=" w-full bg-[#0F172A] z-50 ">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="fixed top-0 left-0  w-full bg-[#0F172A] z-50 ">
+      <div className="mx-auto  px-5 lg:px-15 xl:15 2xl:px-36">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center gap-5">
-            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+          <div
+           onClick={() => {
+  if (location.pathname !== "/") {
+    // If on another route, go home first and then scroll to hero
+    navigate("/", { state: { scrollTo: "hero" } })
+  } else {
+    // If already home, force scroll to very top
+    window.scrollTo({ top: 0, behavior: "smooth" })
+    setActiveScroll("hero")
+  }
+}}
+
+            className="flex items-center gap-5 cursor-pointer">
+            <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center">
               <img
                 src={websitelogo}
                 alt="Website Logo"
-                className="scale-140 h-full w-full rounded-full border-2 border-transparent hover:border-[#66ADD3] transition-colors duration-300 transform hover:scale-[1.1]"
+                className="scale-140 h-full w-full rounded-full border-2 border-transparent hover:border-[#66ADD3] transition-colors duration-300 transform "
               />
             </div>
             <span className="font-bold text-3xl xl:text-4xl">{navigationData.logo.text}</span>

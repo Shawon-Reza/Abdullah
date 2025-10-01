@@ -49,7 +49,7 @@ const ServicesSection = () => {
 
   return (
     <section className="bg-slate-900 py-16 px-4 sm:px-6 lg:px-8">
-      <div className="lg:px-20 xl:px-34 mx-auto">
+      <div className="lg:px-20 xl:px-34 2xl:px-52 3xl:px-60 mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">{servicesData.title}</h2>
@@ -69,7 +69,7 @@ const ServicesSection = () => {
 
                 {/* Icon */}
                 <div className="mb-4">
-                  <IconComponent className="w-8 h-8 text-[#66ADD3]" />
+                  <IconComponent size={42} className=" text-[#66ADD3] bg-[#66ADD3]/20 rounded-lg p-2" />
                 </div>
 
                 {/* Title */}
