@@ -4,28 +4,28 @@ import { FaChevronDown } from 'react-icons/fa';
 const FAQComponent = () => {
     const faqs = [
         {
-            question: 'Do I need a credit card to start my free Pro month?',
-            answer: 'No, you do not need a credit card to start your free Pro month. Simply sign up with your email.',
+            question: 'Do I need a credit card?',
+            answer: 'No, not for the first 100 users.',
         },
         {
-            question: "What's included in the Pro features that I won't get in the basic plan?",
-            answer: 'Pro features include advanced AI tools, unlimited document generation, and priority support.',
+            question: "What does Pro include?",
+            answer: 'Unlimited chatbot, documents, and freight calculations (fair-use caps to prevent abuse)',
         },
         {
-            question: 'What will the pricing be after the free month?',
-            answer: 'After the free month, pricing starts at $29/month for the Pro plan. Check our pricing page for details.',
+            question: 'Are prices “Platts”?',
+            answer: 'We provide indicative CIF/FOB ladders with transparent sources; Platts requires a license.',
         },
         {
-            question: 'Can I edit and customize the generated documents?',
-            answer: 'Yes, all generated documents are fully editable and customizable to fit your needs.',
+            question: 'Can I edit documents?',
+            answer: 'Yes. Download Word/PDF/Excel and edit freely.',
         },
         {
-            question: 'Is this suitable for teams, or just individual users?',
-            answer: 'Our platform is suitable for both individual users and teams, with collaboration features available in higher plans.',
+            question: 'Team accounts?',
+            answer: 'Business plan includes seats, SSO, and audit logs.',
         },
         {
-            question: 'How do you handle data privacy and security?',
-            answer: 'We use industry-standard encryption and comply with GDPR and other regulations to ensure your data is secure.',
+            question: 'Data privacy?',
+            answer: 'Your workspace is isolated; data can be exported and deleted anytime.',
         },
     ];
 

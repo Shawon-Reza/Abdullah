@@ -14,7 +14,7 @@ const NavBar = () => {
     menuItems: [
       { id: 1, label: "Home", href: "/", isScroll: true, scrollId: "hero" },
       { id: 2, label: "How it works", href: "/", isScroll: true, scrollId: "how-it-works" },
-      { id: 3, label: "Modules", href: "/modules" },
+      { id: 3, label: "Modules", href: "" },
       { id: 4, label: "Pricing", href: "/pricing" },
       { id: 5, label: "About Us", href: "/about_us" },
       { id: 6, label: "FAQ", href: "/faq" },

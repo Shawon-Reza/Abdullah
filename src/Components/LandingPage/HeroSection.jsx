@@ -56,7 +56,7 @@ const HeroSection = () => {
                     <div className="flex flex-col justify-center">
                         <h1 className="text-6xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
                             FuelDeal.ai- <span className="text-primary">AI </span>
-                            for <span className="text-primary">Oil & Fuel</span> trading
+                            For <span className="text-primary">Oil & Gas</span> trading
                         </h1>
                         <p className="text-lg sm:text-xl text-[#CBD5E1] mb-8 leading-relaxed">
                             Instant due diligence, clean trade docs, and CIF/FOB pricing in minutes.
@@ -64,7 +64,7 @@ const HeroSection = () => {
 
                         <div className="flex flex-wrap gap-3 mb-15 text-[#66ADD3]">
                             <div className="flex items-center justify-center gap-3 px-4 py-2 rounded-full border border-[#66ADD3]">
-                                <img src={Simplification} alt="" /> Built by Traders, For Traders
+                                <img src={Simplification} alt="" /> Powered by Traders, for Traders
                             </div>
                         </div>
 

@@ -6,6 +6,7 @@ import FAQ from "../Components/LandingPage/FAQ";
 import Pricing from "../Components/LandingPage/Pricing";
 import AboutUs from "../Components/LandingPage/AboutUs";
 import Register from "../Components/LandingPage/Register";
+import ErrorPage from "../Components/LandingPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register></Register>,
+  },
+  {
+    path: "*",
+    element: <ErrorPage></ErrorPage>,
   },
 ]);
 

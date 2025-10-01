@@ -6,17 +6,17 @@ const TrustSection = ({ trustData }) => {
   const defaultTrustData = {
     title: "Tested by international trading company",
     companies: [
-      { name: "Logoipsum", id: 1, icon: "circle" },
-      { name: "Logoipsum", id: 2, icon: "x" },
-      { name: "Logoipsum", id: 3, icon: "star" },
-      { name: "Logoipsum", id: 4, icon: "zap" },
-      { name: "Logoipsum", id: 5, icon: "shield" },
-      { name: "Logoipsum", id: 6, icon: "circle" },
-      { name: "Logoipsum", id: 7, icon: "x" },
-      { name: "Logoipsum", id: 8, icon: "star" },
-      { name: "Logoipsum", id: 9, icon: "zap" },
-      { name: "Logoipsum", id: 10, icon: "zap" },
-      { name: "Logoipsum", id: 11, icon: "zap" },
+      { name: " ENGSL MINERALS DMCC", id: 1, icon: "circle" },
+      { name: " ENGSL MINERALS DMCC", id: 2, icon: "x" },
+      { name: " ENGSL MINERALS DMCC", id: 3, icon: "star" },
+      { name: " ENGSL MINERALS DMCC", id: 4, icon: "zap" },
+      { name: " ENGSL MINERALS DMCC", id: 5, icon: "shield" },
+      { name: " ENGSL MINERALS DMCC", id: 6, icon: "circle" },
+      { name: " ENGSL MINERALS DMCC", id: 7, icon: "x" },
+      { name: " ENGSL MINERALS DMCC", id: 8, icon: "star" },
+      { name: " ENGSL MINERALS DMCC", id: 9, icon: "zap" },
+      { name: " ENGSL MINERALS DMCC", id: 10, icon: "zap" },
+      { name: " ENGSL MINERALS DMCC", id: 11, icon: "zap" },
     ],
   };
 
