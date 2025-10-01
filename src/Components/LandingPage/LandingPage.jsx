@@ -70,7 +70,7 @@ const LandingPage = () => {
     <div className="relative bg-[#0F172A] text-white overflow-hidden">
       {/* Hover zone (only works when not at top) */}
       <div
-        className="fixed top-0 left-0 w-full h-10 z-50"
+        className="fixed top-0 left-0 w-full h-10 z-50 "
         onMouseEnter={() => !isAtTop && setShowNav(true)}
         onMouseLeave={() => !isAtTop && setShowNav(false)}
       >
@@ -91,7 +91,7 @@ const LandingPage = () => {
       </div>
 
       {/* Page Sections */}
-      <div className="pt-5">
+      <div className="pt-10">
         {sections.map((Component, index) => (
           <motion.div
             key={index}

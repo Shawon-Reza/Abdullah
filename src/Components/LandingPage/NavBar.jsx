@@ -90,16 +90,16 @@ const NavBar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div
-           onClick={() => {
-  if (location.pathname !== "/") {
-    // If on another route, go home first and then scroll to hero
-    navigate("/", { state: { scrollTo: "hero" } })
-  } else {
-    // If already home, force scroll to very top
-    window.scrollTo({ top: 0, behavior: "smooth" })
-    setActiveScroll("hero")
-  }
-}}
+            onClick={() => {
+              if (location.pathname !== "/") {
+                // If on another route, go home first and then scroll to hero
+                navigate("/", { state: { scrollTo: "hero" } })
+              } else {
+                // If already home, force scroll to very top
+                window.scrollTo({ top: 0, behavior: "smooth" })
+                setActiveScroll("hero")
+              }
+            }}
 
             className="flex items-center gap-5 cursor-pointer">
             <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center">

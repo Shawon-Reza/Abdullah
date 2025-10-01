@@ -21,12 +21,11 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
     const roleOptions = [
         "Select your role",
         "Trader",
-        "Clearing/Operations",
+        "Commercial Manager",
+        "Chartering/Ops",
         "Broker",
-        "Compliance Officer",
-        "Finance Director",
-        "Senior Trader",
-        "VP of Operations",
+        "Compliance",
+        "Other",
     ]
 
     const handleInputChange = (e) => {
