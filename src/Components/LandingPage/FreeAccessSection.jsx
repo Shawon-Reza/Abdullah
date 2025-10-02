@@ -1,6 +1,9 @@
 import { FiGift, FiUsers, FiClock } from "react-icons/fi"
+import { useNavigate } from "react-router-dom"
 
-const FreeAccessSection = () => {
+const FreeAccessSection = ({ data }) => {
+  const navigate = useNavigate();
+  // console.log(data)
   // This data structure makes it easy to integrate with backend later
   const offerData = {
     badge: {
@@ -13,9 +16,9 @@ const FreeAccessSection = () => {
     },
     description: "Unlimited chatbot conversations, document generations, and freight calculations (fair-use applies).",
     stats: {
-      spotsUsed: 87,
+      spotsUsed: data?.subscription_count,
       totalSpots: 100,
-      daysLeft: 12,
+      daysLeft: data?.expires_in?.days_left,
     },
     cta: {
       text: "Claim Your Free Pro Month",
@@ -23,7 +26,7 @@ const FreeAccessSection = () => {
     },
   }
 
-  
+
 
   return (
     <div className="">
@@ -67,7 +70,11 @@ const FreeAccessSection = () => {
 
           {/* CTA Button */}
           <div className="mb-6">
-            <button className="cursor-pointer bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-transform duration-600 ease-in-out shadow-lg hover:shadow-xl transform hover:scale-105 ">
+            <button 
+            onClick={()=>{
+              navigate('/register')
+            }}
+            className="cursor-pointer bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-transform duration-600 ease-in-out shadow-lg hover:shadow-xl transform hover:scale-105 ">
               {offerData.cta.text}
             </button>
           </div>
@@ -77,7 +84,7 @@ const FreeAccessSection = () => {
         </div>
       </div>
 
-   
+
     </div>
   )
 }

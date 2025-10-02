@@ -4,14 +4,16 @@ import DotGrid from "../../Styles/background/DotGrid";
 import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const HeroSection = () => {
+const HeroSection = ({data}) => {
+//   console.log(data)
+
     const navigate= useNavigate();
     const heroData = {
         cta: {
-            text: "Claim 1 of 100 Free Pro Months",
+            text: `Claim ${data?.subscription_count} of 100 Free Pro Months`,
             href: "#claim-free",
         },
-        promoText: "First 100 users get 1 month of Pro free • Seats left: 100",
+        promoText: `First 100 users get 1 month of Pro free • Seats left: ${data?.count_left}`,
         video: {
             src: 'https://res.cloudinary.com/dhxd3lxyp/video/upload/v1759206060/5321843_Plant_Illuminated_3840x2160_n3zmut.mp4',
             alt: "FuelDeal.ai demo video",

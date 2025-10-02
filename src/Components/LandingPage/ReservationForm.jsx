@@ -1,9 +1,12 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import axios from "axios"
 import { FaRocket, FaChevronDown } from "react-icons/fa"
 import { GoRocket } from "react-icons/go"
 import { IoIosLock, IoMdCheckmark } from "react-icons/io"
+import Swal from "sweetalert2"
+import { toast, ToastContainer } from "react-toastify"
 
 const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
     const [formState, setFormState] = useState({
@@ -13,8 +16,25 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
         businessEmail: "",
         companyName: "",
         role: "",
-        agreeToUpdates: false,
     })
+    const [count, setCount] = useState(null)
+    useEffect(() => {
+        axios.get("https://well-anteater-happy.ngrok-free.app/accounts/api/additional-info", {
+            headers: {
+                "ngrok-skip-browser-warning": "true", // 👈 required to bypass ngrok warning
+            },
+        })
+            .then(response => {
+                // console.log(response.data); // will log twice in dev (StrictMode)
+                setCount(response.data.subscription_count)
+                console.log(response.data)
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }, []); // 👈 empty array ensures it only runs on mount
+
+    console.log(count)
 
     const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -40,14 +60,34 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
         e.preventDefault()
         setIsSubmitting(true)
 
-        // Simulate API call
-        setTimeout(() => {
+        try {
+            // Send POST request
+            const res = await axios.post("https://well-anteater-happy.ngrok-free.app/accounts/api/pre-subscribe", {
+                first_name: formState.firstName,
+                last_name: formState.lastName,
+                phone_number: formState.phoneNumber,
+                email: formState.businessEmail,
+                company_name: formState.companyName,
+                role: formState.role,
+            })
+
+            console.log("Form submitted:", res.data)
+            Swal.fire({
+                title: "Good job!",
+                text: "You reserved free pro month",
+                icon: "success",
+                background: "#1f2937", // dark gray background
+                color: "#fff",          // white text
+                confirmButtonColor: "#3b82f6" // blue button
+            });
+
+
+            // Call parent onSubmit if provided
             if (onSubmit) {
                 onSubmit(formState)
             }
-            console.log("Form submitted:", formState)
-            setIsSubmitting(false)
-            // Reset form after successful submission
+
+            // Reset form
             setFormState({
                 firstName: "",
                 lastName: "",
@@ -55,9 +95,26 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
                 businessEmail: "",
                 companyName: "",
                 role: "",
-                agreeToUpdates: false,
             })
-        }, 1000)
+        } catch (error) {
+            console.error("Submission failed:", error);
+            const message = error?.response?.data?.error_message || error.message || "Unknown error";
+            toast.error(`Error: ${message}`, {
+                style: {
+                    background: '#1f2937', // dark gray (Tailwind slate-800)
+                    color: '#fff',          // white text
+                    fontWeight: 'bold',
+                },
+                iconTheme: {
+                    primary: '#f87171',    // icon color (red)
+                    secondary: '#1f2937',  // icon background
+                },
+            });
+            console.log(message)
+        }
+        finally {
+            setIsSubmitting(false)
+        }
     }
 
     const defaultData = {
@@ -72,6 +129,7 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
 
     return (
         <section className="py-16 px-4 bg-slate-900">
+            <ToastContainer></ToastContainer>
             <div className="max-w-2xl mx-auto">
                 {/* Icon */}
                 <div className="flex justify-center mb-6">
@@ -82,7 +140,9 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
 
                 {/* Header */}
                 <div className="text-center mb-8">
-                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">{data.title}</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                        {data.title}
+                    </h2>
                     <p className="text-gray-300 text-sm leading-relaxed">{data.subtitle}</p>
                 </div>
 
@@ -91,7 +151,9 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
                     {/* First Name & Last Name */}
                     <div className="grid grid-cols-2 gap-4">
                         <div>
-                            <label className="block text-gray-300 text-sm font-medium mb-2">First Name</label>
+                            <label className="block text-gray-300 text-sm font-medium mb-2">
+                                First Name
+                            </label>
                             <input
                                 type="text"
                                 name="firstName"
@@ -103,7 +165,9 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
                             />
                         </div>
                         <div>
-                            <label className="block text-gray-300 text-sm font-medium mb-2">Last Name</label>
+                            <label className="block text-gray-300 text-sm font-medium mb-2">
+                                Last Name
+                            </label>
                             <input
                                 type="text"
                                 name="lastName"
@@ -118,7 +182,9 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
 
                     {/* Phone Number */}
                     <div>
-                        <label className="block text-gray-300 text-sm font-medium mb-2">Phone Number</label>
+                        <label className="block text-gray-300 text-sm font-medium mb-2">
+                            Phone Number
+                        </label>
                         <input
                             type="tel"
                             name="phoneNumber"
@@ -132,7 +198,9 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
 
                     {/* Business Email */}
                     <div>
-                        <label className="block text-gray-300 text-sm font-medium mb-2">Business Email</label>
+                        <label className="block text-gray-300 text-sm font-medium mb-2">
+                            Business Email
+                        </label>
                         <input
                             type="email"
                             name="businessEmail"
@@ -146,7 +214,9 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
 
                     {/* Company Name */}
                     <div>
-                        <label className="block text-gray-300 text-sm font-medium mb-2">Company Name</label>
+                        <label className="block text-gray-300 text-sm font-medium mb-2">
+                            Company Name
+                        </label>
                         <input
                             type="text"
                             name="companyName"
@@ -160,7 +230,9 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
 
                     {/* Role Dropdown */}
                     <div>
-                        <label className="block text-gray-300 text-sm font-medium mb-2">Your Role</label>
+                        <label className="block text-gray-300 text-sm font-medium mb-2">
+                            Your Role
+                        </label>
                         <div className="relative">
                             <select
                                 name="role"
@@ -184,27 +256,19 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
                         </div>
                     </div>
 
-                    {/* Checkbox */}
-                    <div className="flex items-start space-x-3 pt-2">
-                        <input
-                            type="checkbox"
-                            name="agreeToUpdates"
-                            checked={formState.agreeToUpdates}
-                            onChange={handleInputChange}
-                            className="mt-1 w-4 h-4 bg-slate-800 border border-[#CBD5E1] rounded focus:ring-blue-500 focus:ring-2"
-                            required
-                        />
-                        <label className="text-gray-300 text-sm leading-relaxed">I agree to receive launch updates</label>
-                    </div>
-
                     {/* Submit Button */}
                     <button
                         type="submit"
-                        disabled={isSubmitting}
+                        disabled={isSubmitting || count >= 100}
                         className="w-full bg-[#66ADD3] hover:bg-[#3d9bce] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed mt-6 cursor-pointer"
                     >
-                        {isSubmitting ? "Reserving..." : data.buttonText}
+                        {count >= 100
+                            ? "Limit Reached"
+                            : isSubmitting
+                                ? "Reserving..."
+                                : data.buttonText}
                     </button>
+
                 </form>
 
                 {/* Disclaimer */}
@@ -215,7 +279,12 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
                     </div>
                     <div className="flex justify-center space-x-4 text-xs text-gray-500">
                         {data.policies.map((policy, index) => (
-                            <span className="flex gap-1 items-center text-[#38A169]" key={index}><IoMdCheckmark /> {policy}</span>
+                            <span
+                                className="flex gap-1 items-center text-[#38A169]"
+                                key={index}
+                            >
+                                <IoMdCheckmark /> {policy}
+                            </span>
                         ))}
                     </div>
                 </div>

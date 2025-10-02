@@ -12,6 +12,8 @@ import ReservationForm from './ReservationForm';
 import GlobalTradeComponent from './GlobalTradeComponent';
 import FooterComponent from './FooterComponent';
 import { useLocation } from 'react-router-dom';
+import axios from "axios";
+
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -22,6 +24,7 @@ const LandingPage = () => {
   const location = useLocation();
   const [showNav, setShowNav] = useState(true); // default true at top
   const [isAtTop, setIsAtTop] = useState(true);
+  const [data, setData] = useState(null)
 
   // Scroll detection
   useEffect(() => {
@@ -53,14 +56,31 @@ const LandingPage = () => {
     }
   }, [location]);
 
+  useEffect(() => {
+    axios.get("https://well-anteater-happy.ngrok-free.app/accounts/api/additional-info", {
+      headers: {
+        "ngrok-skip-browser-warning": "true", // 👈 required to bypass ngrok warning
+      },
+    })
+      .then(response => {
+        console.log(response.data); // will log twice in dev (StrictMode)
+        setData(response.data)
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, []); // 👈 empty array ensures it only runs on mount
+
+
+
   const sections = [
-    <HeroSection key="hero" />,
+    <HeroSection data={data} key="hero" />,
     <FeaturesSection key="features" />,
     <ServicesSection key="services" />,
     <HowItWorksSection id="how-it-works" key="how" />,
-    <FreeAccessSection key="freeaccess" />,
+    <FreeAccessSection data={data} key="freeaccess" />,
     <TrustSection key="trust" />,
-    <ReviewSection key="review" />,
+    <ReviewSection data={data} key="review" />,
     <GlobalTradeComponent key="global" />,
     <ReservationForm key="reservation" />,
     <FooterComponent key="footer" />,

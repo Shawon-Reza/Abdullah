@@ -2,7 +2,6 @@ import { FiUpload, FiSettings, FiDownload } from "react-icons/fi"
 
 const HowItWorksSection = ({ id }) => {
 
-console.log(id)
 
   const sectionData = {
     title: "How It Works",
