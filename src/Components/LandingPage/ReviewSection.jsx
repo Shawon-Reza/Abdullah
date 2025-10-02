@@ -122,7 +122,7 @@ const ReviewSection = ({ data }) => {
         <img
           src={
             review.author.avatar
-              ? `http://10.10.13.59:8006${review.author.avatar}`
+              ? `https://well-anteater-happy.ngrok-free.app${review.author.avatar}`
               : "/placeholder.svg"
           }
           alt={review.author.name}
