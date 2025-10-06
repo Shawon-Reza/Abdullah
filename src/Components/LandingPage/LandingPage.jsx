@@ -63,7 +63,7 @@ const LandingPage = () => {
       },
     })
       .then(response => {
-        console.log(response.data); // will log twice in dev (StrictMode)
+        // console.log(response.data); // will log twice in dev (StrictMode)
         setData(response.data)
       })
       .catch(error => {

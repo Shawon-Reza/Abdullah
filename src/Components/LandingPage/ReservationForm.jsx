@@ -25,14 +25,14 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
             .then(response => {
                 // console.log(response.data); // will log twice in dev (StrictMode)
                 setCount(response.data.subscription_count)
-                console.log(response.data)
+                // console.log(response.data)
             })
             .catch(error => {
                 console.error(error);
             });
     }, []); // 👈 empty array ensures it only runs on mount
 
-    console.log(count)
+    // console.log(count)
 
     const [isSubmitting, setIsSubmitting] = useState(false)
 
