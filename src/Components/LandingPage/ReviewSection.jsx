@@ -124,7 +124,7 @@ const ReviewSection = ({ data }) => {
         <img
           src={
             review.author.avatar
-              ? `https://well-anteater-happy.ngrok-free.app${review.author.avatar}`
+              ? `https://api.fueldeal.ai${review.author.avatar}`
               : "/placeholder.svg"
           }
           alt={review.author.name}

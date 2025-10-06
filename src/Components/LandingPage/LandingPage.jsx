@@ -57,7 +57,7 @@ const LandingPage = () => {
   }, [location]);
 
   useEffect(() => {
-    axios.get("https://well-anteater-happy.ngrok-free.app/accounts/api/additional-info", {
+    axios.get("https://api.fueldeal.ai/accounts/api/additional-info", {
       headers: {
         "ngrok-skip-browser-warning": "true", // 👈 required to bypass ngrok warning
       },

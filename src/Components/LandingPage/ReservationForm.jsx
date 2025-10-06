@@ -19,10 +19,8 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
     })
     const [count, setCount] = useState(null)
     useEffect(() => {
-        axios.get("https://well-anteater-happy.ngrok-free.app/accounts/api/additional-info", {
-            headers: {
-                "ngrok-skip-browser-warning": "true", // 👈 required to bypass ngrok warning
-            },
+        axios.get("https://api.fueldeal.ai/accounts/api/additional-info", {
+           
         })
             .then(response => {
                 // console.log(response.data); // will log twice in dev (StrictMode)
@@ -62,7 +60,7 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
 
         try {
             // Send POST request
-            const res = await axios.post("https://well-anteater-happy.ngrok-free.app/accounts/api/pre-subscribe", {
+            const res = await axios.post("https://api.fueldeal.ai/accounts/api/pre-subscribe", {
                 first_name: formState.firstName,
                 last_name: formState.lastName,
                 phone_number: formState.phoneNumber,
