@@ -60,6 +60,7 @@ const ReviewSection = ({ data }) => {
       />
     ))
   }
+  
 
   return (
     <div className="bg-slate-900 py-16 px-5 lg:px-15 xl:15 2xl:px-36">
@@ -77,6 +78,7 @@ const ReviewSection = ({ data }) => {
         {/* Reviews Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
   {reviewsData.reviews.map((review) => (
+    
     <div
       key={review.id}
       className="h-full flex flex-col bg-slate-800/50 border border-slate-700 rounded-lg p-6 hover:bg-slate-800/70 transition-colors relative group"

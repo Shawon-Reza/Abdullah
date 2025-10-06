@@ -109,7 +109,7 @@ const NavBar = () => {
                 className="scale-140 h-full w-full rounded-full border-2 border-transparent hover:border-[#66ADD3] transition-colors duration-300 transform "
               />
             </div>
-            <span className="font-bold text-3xl xl:text-4xl">{navigationData.logo.text}</span>
+            <span className="font-bold text-3xl text-white xl:text-4xl">{navigationData.logo.text}</span>
           </div>
 
           {/* Desktop Menu */}
