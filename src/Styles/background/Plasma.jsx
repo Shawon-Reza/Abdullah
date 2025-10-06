@@ -186,7 +186,7 @@ export const Plasma = ({
         // eslint-disable-next-line react-hooks/exhaustive-deps
         containerRef.current?.removeChild(canvas);
       } catch {
-        console.warn('Canvas already removed from container');
+        // console.warn('Canvas already removed from container');
       }
     };
   }, [color, speed, direction, scale, opacity, mouseInteractive]);
