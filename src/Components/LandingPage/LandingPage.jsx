@@ -63,11 +63,11 @@ const LandingPage = () => {
       },
     })
       .then(response => {
-        // console.log(response.data); // will log twice in dev (StrictMode)
+        console.log(response.data); // will log twice in dev (StrictMode)
         setData(response.data)
       })
       .catch(error => {
-        console.error(error);
+        // console.error(error);
       });
   }, []); // 👈 empty array ensures it only runs on mount
 

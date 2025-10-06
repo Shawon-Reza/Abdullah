@@ -17,7 +17,7 @@ const PromoForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Handle form submission logic here
-        console.log('Form submitted:', formData);
+        // console.log('Form submitted:', formData);
     };
 
     return (
