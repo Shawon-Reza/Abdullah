@@ -44,7 +44,7 @@ const ServicesSection = () => {
 
   const handleSampleClick = (serviceTitle) => {
     // This function can be connected to backend API later
-    console.log(`Viewing sample for: ${serviceTitle}`)
+    // console.log(`Viewing sample for: ${serviceTitle}`)
   }
 
   return (

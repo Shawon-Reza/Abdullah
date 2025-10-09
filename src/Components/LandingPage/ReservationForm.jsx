@@ -28,11 +28,11 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
                 // console.log(response.data)
             })
             .catch(error => {
-                console.error(error);
+                // console.error(error);
             });
     }, []); // 👈 empty array ensures it only runs on mount
 
-    // console.log(count)
+    console.log(count)
 
     const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -69,7 +69,7 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
                 role: formState.role,
             })
 
-            console.log("Form submitted:", res.data)
+            // console.log("Form submitted:", res.data)
             Swal.fire({
                 title: "Good job!",
                 text: "You reserved free pro month",
@@ -95,7 +95,7 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
                 role: "",
             })
         } catch (error) {
-            console.error("Submission failed:", error);
+            // console.error("Submission failed:", error);
             const message = error?.response?.data?.error_message || error.message || "Unknown error";
             toast.error(`Error: ${message}`, {
                 style: {
@@ -108,7 +108,7 @@ const ReservationForm = ({ formData, onSubmit, isAdmin = false }) => {
                     secondary: '#1f2937',  // icon background
                 },
             });
-            console.log(message)
+            // console.log(message)
         }
         finally {
             setIsSubmitting(false)
