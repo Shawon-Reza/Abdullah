@@ -77,7 +77,8 @@ const HowItWorksSection = ({ id }) => {
 
               {/* Card Content */}
               <div className="relative bg-slate-800 border border-slate-700 rounded-lg p-6 text-center group-hover:border-slate-600 hover:scale-103 transform transition-transform duration-700 ease-in-out
-                              flex flex-col justify-between h-full w-full">
+                              flex flex-col justify-between h-full w-full" 
+                              >
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-white bg-[#323e4d] p-2 px-3 rounded-full text-sm font-medium mr-4">{step.step}</span>
