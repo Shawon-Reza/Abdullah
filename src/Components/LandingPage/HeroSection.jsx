@@ -15,7 +15,7 @@ const HeroSection = ({data}) => {
         },
         promoText: `First 100 users get 1 month of Pro free • Seats left: ${data?.count_left}`,
         video: {
-            src: 'https://res.cloudinary.com/dhxd3lxyp/video/upload/v1760759029/fuel_1_ajyxl6.mp4',
+            src: 'https://res.cloudinary.com/dhxd3lxyp/video/upload/v1760776161/fuel_1_wssots.mp4',
             alt: "FuelDeal.ai demo video",
         },
     };
